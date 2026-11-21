@@ -8,7 +8,10 @@ const PORT = process.env.PORT || 3000;
 
 // Vite 프론트엔드의 요청 허용
 app.use(cors({
-  origin: "http://localhost:5174"
+  origin: [
+    "http://localhost:5174",
+    "https://arch-front-six.vercel.app"
+  ]
 }));
 
 
