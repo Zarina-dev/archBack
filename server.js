@@ -1,0 +1,26 @@
+
+const express = require("express");
+const cors = require("cors");
+
+const app = express();
+const PORT = 3000;
+
+// Vite 프론트엔드의 요청 허용
+app.use(cors({
+  origin: "http://localhost:5174"
+}));
+
+
+// API: 사용자 이름 반환
+app.get("/api/user", (req, res) => {
+  console.log("사용자 이름 요청을 받았습니다.");
+
+  res.json({
+    name: "Jeny"
+  });
+});
+
+// 서버 실행
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
