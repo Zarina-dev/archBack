@@ -3,7 +3,8 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
 
 // Vite 프론트엔드의 요청 허용
 app.use(cors({
@@ -21,6 +22,6 @@ app.get("/api/user", (req, res) => {
 });
 
 // 서버 실행
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server is running on port ${PORT}`);
 });
